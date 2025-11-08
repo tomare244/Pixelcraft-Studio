@@ -31,8 +31,8 @@
     main {
       flex: 1;
       display: flex;
-      align-items: center;
-      justify-content: flex-start; /* Alinea todo a la izquierda */
+      align-items: flex-start;
+      justify-content: flex-start;
       padding: 60px;
     }
 
@@ -71,6 +71,28 @@
       transform: scale(1.05);
     }
 
+    /* Estadísticas */
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .stat-item {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+    }
+    .stat-item h3 {
+      font-size: 2em;
+      margin-bottom: 5px;
+      color: #0ff;
+    }
+    .stat-item p {
+      font-size: 1em;
+      color: #ddd;
+    }
+
     footer {
       background: #000;
       text-align: center;
@@ -87,6 +109,7 @@
     @media (max-width: 900px) {
       main {flex-direction: column; text-align: center; padding: 30px;}
       .section {max-width: 90%;}
+      .stats {justify-content: center;}
     }
   </style>
 </head>
@@ -107,6 +130,26 @@
       <p>Somos un estudio profesional de Roblox que transforma tus ideas en <b>eventos y experiencias extraordinarias.</b></p>
       <a href="proyectos.html"><button class="btn">Ver Proyectos</button></a>
       <a href="contacto.html"><button class="btn">Contactar Ahora</button></a>
+
+      <!-- Estadísticas -->
+      <div class="stats">
+        <div class="stat-item">
+          <h3>9</h3>
+          <p>Proyectos Completados</p>
+        </div>
+        <div class="stat-item">
+          <h3>9</h3>
+          <p>Clientes Satisfechos</p>
+        </div>
+        <div class="stat-item">
+          <h3>5</h3>
+          <p>Creadores Expertos</p>
+        </div>
+        <div class="stat-item">
+          <h3>24/7</h3>
+          <p>Soporte Disponible</p>
+        </div>
+      </div>
     </div>
   </main>
 
