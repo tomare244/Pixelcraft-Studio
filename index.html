@@ -1,87 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pixelcraft Studio</title>
-  <meta name="description" content="Pixelcraft Studio — clon estilo Penta Creators listo para GitHub Pages" />
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="bg-dots" aria-hidden>
-    <div class="dot a"></div>
-    <div class="dot b"></div>
-  </div>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
 
-  <header>
-    <div class="brand">
-      <img src="assets/logo.png" alt="Pixelcraft Studio logo" class="logo">
-      <div>
-        <h1>Pixelcraft Studio</h1>
-        <div class="sub">pentaweb — clon</div>
-      </div>
-    </div>
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px;
+      background-color: #000;
+      border-bottom: 1px solid #111;
+    }
 
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#about">Acerca</a>
-      <a class="cta" href="#">Ver proyecto</a>
-    </nav>
-  </header>
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #fff;
+    }
 
-  <main>
-    <section class="hero">
-      <div class="hero-left">
-        <h2>Welcome to Pixelcraft Studio</h2>
-        <p class="lead">Clon del estilo visual de Penta Creators. Ideal para portfolios, studios o páginas de producto. Hecho con HTML/CSS/JS puro para GitHub Pages.</p>
-        <div class="buttons">
-          <a class="btn primary" href="#features">Usar plantilla</a>
-          <a class="btn" href="#about">Cómo desplegar</a>
-        </div>
-      </div>
+    .logo-icon {
+      width: 35px;
+      height: 35px;
+      background-color: #e50914;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      font-weight: bold;
+      color: #fff;
+    }
 
-      <div class="hero-right card">
-        <div class="card-head">
-          <div class="title">Preview</div>
-          <div class="muted">Responsive • Estático</div>
-        </div>
-        <div class="preview" role="img">Vista previa del sitio (aquí va una imagen)</div>
-      </div>
-    </section>
+    nav a {
+      margin: 0 12px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-    <section id="features" class="features">
-      <div class="feature">
-        <h3>Diseño coherente</h3>
-        <p class="muted">Colores, tipografía y espaciado pensados para mantener la estética original.</p>
-      </div>
-      <div class="feature">
-        <h3>Animaciones sutiles</h3>
-        <p class="muted">Transiciones y efectos suaves para destacar llamadas a la acción.</p>
-      </div>
-      <div class="feature">
-        <h3>Listo para GitHub Pages</h3>
-        <p class="muted">Archivos separados: sube todo tal cual y activa Pages en la rama <code>main</code>.</p>
-      </div>
-    </section>
+    nav a:hover {
+      color: #e50914;
+    }
 
-    <section id="about" class="about">
-      <div class="card">
-        <h3>Cómo desplegar en GitHub Pages</h3>
-        <ol class="muted">
-          <li>Crear repositorio nuevo en GitHub (ej. <code>pixelcraft-studio</code>).</li>
-          <li>Subir estos archivos a la rama <code>main</code>.</li>
-          <li>Ir a <strong>Settings → Pages</strong> y seleccionar la rama <code>main</code> (root).</li>
-          <li>Esperar unos minutos y abrir <code>https://&lt;tu-usuario&gt;.github.io/pixelcraft-studio/</code>.</li>
-        </ol>
-      </div>
-    </section>
-  </main>
+    .hero {
+      text-align: left;
+      padding: 120px 60px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.9), #000), url('https://i.imgur.com/rUOjTqt.jpeg') no-repeat center/cover;
+      color: #fff;
+    }
 
-  <footer>
-    <div>© <strong>Pixelcraft Studio</strong> — Clon creado por ti</div>
-    <div class="muted">Hecho con ❤️ • HTML/CSS/JS</div>
-  </footer>
+    .tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid #e50914;
+      color: #e50914;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
 
-  <script src="script.js"></script>
-</body>
-</html>
+    h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      color: #ff3b3b;
+      margin: 0;
+      line-height:
