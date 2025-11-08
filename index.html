@@ -6,8 +6,13 @@
   <title>Pixelcraft Studio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
       background-color: #000;
       color: #fff;
@@ -20,6 +25,9 @@
       padding: 20px 60px;
       background-color: #000;
       border-bottom: 1px solid #111;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .logo {
@@ -58,8 +66,12 @@
     .hero {
       text-align: left;
       padding: 120px 60px;
-      background: linear-gradient(180deg, rgba(0,0,0,0.9), #000), url('https://i.imgur.com/rUOjTqt.jpeg') no-repeat center/cover;
-      color: #fff;
+      min-height: 100vh;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 1)),
+        url('https://i.imgur.com/YX2I3OE.jpeg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .tag {
@@ -73,8 +85,81 @@
     }
 
     h1 {
-      font-size: 4rem;
+      font-size: 3.8rem;
       font-weight: 800;
       color: #ff3b3b;
       margin: 0;
-      line-height:
+      line-height: 1.1;
+    }
+
+    p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 20px 0;
+      color: #ddd;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+      border: 2px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background-color: #e50914;
+      color: white;
+      border-color: #e50914;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: white;
+      border-color: #e50914;
+    }
+
+    .btn-primary:hover {
+      background-color: #ff2424;
+    }
+
+    .btn-outline:hover {
+      background-color: #e50914;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="logo-icon">P</div>
+      Pixelcraft Studio
+    </div>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Proyectos</a>
+      <a href="#">Servicios</a>
+      <a href="#">Equipo</a>
+      <a href="#">Amigos</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="tag">Estudio Profesional de Roblox y Minecraft</div>
+    <h1>Creamos Juegos de<br>Roblox y Minecraft</h1>
+    <p>Somos un estudio profesional que transforma tus ideas en experiencias interactivas extraordinarias. Desde mundos creativos hasta proyectos épicos.</p>
+    <div class="buttons">
+      <button class="btn btn-primary">Ver Proyectos</button>
+      <button class="btn btn-outline">Contactar Ahora</button>
+    </div>
+  </section>
+</body>
+</html>
