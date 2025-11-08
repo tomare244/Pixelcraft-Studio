@@ -1,235 +1,228 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pixelcraft Studio | Inicio</title>
-  <style>
-    * {
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:"Poppins",sans-serif;
-    }
-    body {
-      background: linear-gradient(180deg, #111 0%, #222 40%, #fff 100%);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixelcraft Studio | Inicio</title>
+<style>
+* {margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif;}
+body {
+  background: linear-gradient(180deg, #111 0%, #222 40%, #fff 100%);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
 
-    /* Preloader */
-    #preloader {
-      position: fixed;
-      top:0; left:0;
-      width: 100%;
-      height: 100%;
-      background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    #preloader .spinner {
-      border: 6px solid #222;
-      border-top: 6px solid #0ff;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin { 0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);} }
+/* Preloader */
+#preloader {
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+#preloader .spinner {
+  border: 6px solid #222;
+  border-top: 6px solid #0ff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { 0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);} }
 
-    /* Header */
-    header {
-      background: #000;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      z-index: 1000;
-    }
-    header h1 { font-size: 1.8em; font-weight: 700; }
-    nav a { color: #fff; text-decoration: none; margin-left: 20px; transition: 0.3s; font-weight: 500;}
-    nav a:hover { color: #0ff; }
+/* Header */
+header {
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  z-index: 1000;
+}
+header h1 { font-size: 1.8em; font-weight: 700; }
+nav a { color: #fff; text-decoration: none; margin-left: 20px; transition: 0.3s; font-weight: 500;}
+nav a:hover { color: #0ff; }
+/* Sticky header solo en PC */
+@media (min-width: 901px) { header { position: sticky; top: 0; } }
 
-    @media (min-width: 901px) {
-      header { position: sticky; top: 0; }
-    }
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 30px;
+  gap: 50px;
+}
 
-    main {
-      flex: 1;
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      padding: 100px 60px 60px;
-      gap: 50px;
-      flex-wrap: wrap;
-    }
+/* Sección principal */
+.section {
+  animation: fadeIn 1.5s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 700px;
+  align-items: center;
+}
 
-    /* Sección principal */
-    .section {
-      animation: fadeIn 1.5s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      max-width: 600px;
-    }
+/* Cuadro más pequeño */
+.small-box {
+  border: 2px solid #0ff;
+  padding: 5px 15px;
+  font-weight: 600;
+  font-size: 1em;
+  background: rgba(0,255,255,0.05);
+  border-radius: 8px;
+  text-align: center;
+}
 
-    .small-box {
-      border: 2px solid #0ff;
-      padding: 5px 10px;
-      display: inline-block;
-      font-weight: 600;
-      font-size: 0.9em;
-      background: rgba(0,255,255,0.05);
-      border-radius: 6px;
-      max-width: 200px;
-      text-align: center;
-    }
+/* Texto "Creamos" grande con animación de color */
+.big-text {
+  font-size: 4em;
+  font-weight: 700;
+  background: linear-gradient(90deg, #0ff 50%, #fff 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorChange 20s linear infinite;
+}
+@keyframes colorChange {
+  0% {background-position: 0 0;}
+  50% {background-position: 100% 0;}
+  100% {background-position: 0 0;}
+}
 
-    .big-text {
-      font-size: 3em;
-      font-weight: 700;
-      color: #0ff;
-      margin-top: 10px;
-    }
+/* Texto "Juegos Épicos" tipo máquina de escribir corregido */
+.typewriter {
+  font-size: 3em;
+  font-weight: 700;
+  border-right: .15em solid #0ff;
+  overflow: hidden;
+  display: inline-block;
+}
+.type-text {
+  display: inline-block;
+  animation: typing 2.5s steps(12, end) forwards, blink 0.75s step-end infinite;
+}
+@keyframes typing { from { width: 0; } to { width: 12ch; } }
+@keyframes blink { 0%,49%,100% { border-color: #0ff; } 50% { border-color: transparent; } }
 
-    .typewriter {
-      font-size: 3em;
-      font-weight: 700;
-      overflow: hidden;
-      border-right: .15em solid #0ff;
-      white-space: nowrap;
-      letter-spacing: .05em;
-      animation: typing 2.5s steps(20, end) forwards, blink 0.75s step-end infinite;
-      margin-top: 5px;
-    }
+/* Descripción */
+.description {
+  font-size: 1.2em;
+  color: #ddd;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 10px;
+}
 
-    @keyframes typing { from { width: 0; } to { width: 100%; } }
-    @keyframes blink { 0%, 49%, 100% { border-color: #0ff; } 50% { border-color: transparent; } }
+/* Botones estilo página */
+.btn {
+  background: #0ff;
+  color: #000;
+  padding: 12px 28px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 600;
+  margin: 5px 5px 0 0;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #00cccc;
+  color: #fff;
+  transform: scale(1.05);
+}
 
-    .description {
-      font-size: 1.2em;
-      color: #ddd;
-      line-height: 1.5;
-      margin-top: 10px;
-    }
+/* Estadísticas */
+.stats { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; justify-content: center;}
+.stat-item { flex: 1; min-width: 120px; text-align: center; }
+.stat-item h3 { font-size: 2em; margin-bottom: 5px; color: #0ff; }
+.stat-item p { font-size: 1em; color: #ddd; }
 
-    .btn {
-      background: #0ff;
-      color: #000;
-      padding: 12px 28px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      font-weight: 600;
-      margin: 5px 5px 0 0;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #00cccc;
-      color: #fff;
-      transform: scale(1.05);
-    }
+footer { background: #000; text-align: center; padding: 20px; color: #aaa; font-size: 0.9em; }
 
-    .stats { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px;}
-    .stat-item { flex: 1; min-width: 120px; text-align: center; }
-    .stat-item h3 { font-size: 2em; margin-bottom: 5px; color: #0ff; }
-    .stat-item p { font-size: 1em; color: #ddd; }
+@keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
 
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 20px;
-      color: #aaa;
-      font-size: 0.9em;
-    }
-
-    @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-
-    @media (max-width:900px) {
-      main { flex-direction: column; text-align: center; padding: 60px 30px;}
-      .section {max-width: 90%; align-items: center;}
-      .stats { justify-content: center;}
-      header { flex-direction: column; align-items: center; position: relative; }
-      nav a { margin: 5px; }
-      .big-text, .typewriter { font-size: 2em; }
-    }
-  </style>
+@media (max-width:900px) {
+  .big-text { font-size: 2.5em; }
+  .typewriter { font-size: 2em; }
+}
+</style>
 </head>
 <body>
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="spinner"></div>
-  </div>
+<!-- Preloader -->
+<div id="preloader"><div class="spinner"></div></div>
 
-  <!-- Header -->
-  <header>
-    <h1>Pixelcraft Studio</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="proyectos.html">Proyectos</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-  </header>
+<!-- Header -->
+<header>
+<h1>Pixelcraft Studio</h1>
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="proyectos.html">Proyectos</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+</header>
 
-  <!-- Main content -->
-  <main>
-    <div class="section">
-      <div class="small-box">Estudio Profesional de Roblox</div>
-      <div class="big-text">Creamos</div>
-      <div class="typewriter">Juegos Épicos</div>
-      <div class="description">
-        Somos un estudio profesional de Roblox que transforma tus ideas en <b>eventos y experiencias extraordinarias.</b>
-      </div>
-      <div>
-        <a href="proyectos.html"><button class="btn">Ver Proyectos</button></a>
-        <a href="contacto.html"><button class="btn">Contactar Ahora</button></a>
-      </div>
-      <div class="stats">
-        <div class="stat-item"><h3 data-target="9">0</h3><p>Proyectos Completados</p></div>
-        <div class="stat-item"><h3 data-target="9">0</h3><p>Clientes Satisfechos</p></div>
-        <div class="stat-item"><h3 data-target="5">0</h3><p>Creadores Expertos</p></div>
-        <div class="stat-item"><h3 data-target="24">0</h3><p>Soporte Disponible</p></div>
-      </div>
+<!-- Main content -->
+<main>
+  <div class="section">
+    <div class="small-box">Estudio Profesional de Roblox</div>
+    <div class="big-text">Creamos</div>
+    <div class="typewriter"><span class="type-text">Juegos Épicos</span></div>
+    <div class="description">
+      Somos un estudio profesional de Roblox que transforma tus ideas en <b>eventos y experiencias extraordinarias.</b>
     </div>
-  </main>
+    <div>
+      <a href="proyectos.html"><button class="btn">Ver Proyectos</button></a>
+      <a href="contacto.html"><button class="btn">Contactar Ahora</button></a>
+    </div>
+    <div class="stats">
+      <div class="stat-item"><h3 data-target="9">0</h3><p>Proyectos Completados</p></div>
+      <div class="stat-item"><h3 data-target="9">0</h3><p>Clientes Satisfechos</p></div>
+      <div class="stat-item"><h3 data-target="5">0</h3><p>Creadores Expertos</p></div>
+      <div class="stat-item"><h3 data-target="24">0</h3><p>Soporte Disponible</p></div>
+    </div>
+  </div>
+</main>
 
-  <footer>
-    <p>© 2025 Pixelcraft Studio - Todos los derechos reservados</p>
-  </footer>
+<footer>
+<p>© 2025 Pixelcraft Studio - Todos los derechos reservados</p>
+</footer>
 
-  <script>
-    // Preloader y estadísticas animadas
-    window.addEventListener('load', () => {
-      const preloader = document.getElementById('preloader');
-      preloader.style.opacity = '0';
-      preloader.style.transition = 'opacity 0.5s ease';
-      setTimeout(() => { preloader.style.display = 'none'; }, 500);
+<script>
+// Preloader y estadísticas animadas más lentas
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  preloader.style.opacity = '0';
+  preloader.style.transition = 'opacity 0.5s ease';
+  setTimeout(() => { preloader.style.display = 'none'; }, 500);
 
-      // Estadísticas
-      const counters = document.querySelectorAll('.stat-item h3');
-      counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        let count = 0;
-        const speed = 150;
-        const updateCount = () => {
-          if(count < target) {
-            count++;
-            counter.textContent = count + (counter.dataset.target === "24" ? "/7" : "");
-            setTimeout(updateCount, speed);
-          } else if(counter.dataset.target === "24") {
-            counter.textContent = "24/7";
-          }
-        };
-        updateCount();
-      });
-    });
-  </script>
+  // Estadísticas
+  const counters = document.querySelectorAll('.stat-item h3');
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+    const speed = 150;
+    const updateCount = () => {
+      if(count < target) {
+        count++;
+        counter.textContent = count + (counter.dataset.target === "24" ? "/7" : "");
+        setTimeout(updateCount, speed);
+      } else if(counter.dataset.target === "24") {
+        counter.textContent = "24/7";
+      }
+    };
+    updateCount();
+  });
+});
+</script>
 </body>
 </html>
