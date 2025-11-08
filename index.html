@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixelcraft Studio | Inicio</title>
   <style>
-    * {margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif;}
+    * {
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:"Poppins",sans-serif;
+    }
     body {
       background: linear-gradient(180deg, #111 0%, #222 40%, #fff 100%);
       color: #fff;
@@ -58,8 +63,8 @@
     main {
       flex: 1;
       display: flex;
-      flex-direction: column;
       align-items: flex-start;
+      justify-content: flex-start;
       padding: 100px 60px 60px;
       gap: 50px;
       flex-wrap: wrap;
@@ -105,7 +110,7 @@
     }
 
     @keyframes typing { from { width: 0; } to { width: 100%; } }
-    @keyframes blink { 0%,49%,100% { border-color: #0ff;} 50%{ border-color:transparent;} }
+    @keyframes blink { 0%, 49%, 100% { border-color: #0ff; } 50% { border-color: transparent; } }
 
     .description {
       font-size: 1.2em;
@@ -136,63 +141,31 @@
     .stat-item h3 { font-size: 2em; margin-bottom: 5px; color: #0ff; }
     .stat-item p { font-size: 1em; color: #ddd; }
 
-    /* Equipo */
-    .team-section {
-      width: 100%;
-      margin-top: 80px;
-    }
-    .team-section h2 {
+    footer {
+      background: #000;
       text-align: center;
-      color: #0ff;
-      text-shadow: 0 0 8px rgba(0,255,255,0.3);
-      margin-bottom: 10px;
-      font-size: 2.5em;
-    }
-    .team-section p {
-      text-align: center;
-      color: #ddd;
-      margin-bottom: 40px;
-      font-size: 1.2em;
-    }
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-      gap: 30px;
-    }
-    .team-member {
-      background: #111;
-      border: 2px solid #0ff;
-      border-radius: 12px;
       padding: 20px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,255,255,0.1);
-      transition: 0.3s;
+      color: #aaa;
+      font-size: 0.9em;
     }
-    .team-member:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,255,255,0.25);
-    }
-    .team-member h3 { color: #0ff; margin-bottom: 5px; }
-    .team-member p { color: #ddd; margin: 5px 0; font-size: 0.95em; }
-
-    footer { background: #000; text-align: center; padding: 20px; color: #aaa; font-size: 0.9em; }
 
     @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
 
-    @media(max-width:900px){
-      main { padding: 60px 30px; }
-      .big-text,.typewriter { font-size: 2em; }
+    @media (max-width:900px) {
+      main { flex-direction: column; text-align: center; padding: 60px 30px;}
       .section {max-width: 90%; align-items: center;}
       .stats { justify-content: center;}
-      header { flex-direction: column; align-items: center;}
-      nav a { margin:5px;}
+      header { flex-direction: column; align-items: center; position: relative; }
+      nav a { margin: 5px; }
+      .big-text, .typewriter { font-size: 2em; }
     }
-
   </style>
 </head>
 <body>
   <!-- Preloader -->
-  <div id="preloader"><div class="spinner"></div></div>
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
 
   <!-- Header -->
   <header>
@@ -218,7 +191,6 @@
         <a href="proyectos.html"><button class="btn">Ver Proyectos</button></a>
         <a href="contacto.html"><button class="btn">Contactar Ahora</button></a>
       </div>
-
       <div class="stats">
         <div class="stat-item"><h3 data-target="9">0</h3><p>Proyectos Completados</p></div>
         <div class="stat-item"><h3 data-target="9">0</h3><p>Clientes Satisfechos</p></div>
@@ -226,41 +198,6 @@
         <div class="stat-item"><h3 data-target="24">0</h3><p>Soporte Disponible</p></div>
       </div>
     </div>
-
-    <!-- Equipo -->
-    <div class="team-section">
-      <h2>Nuestro Equipo</h2>
-      <p>Conoce a los creadores detrás de Pixelcraft Studio</p>
-
-      <h3 style="color:#0ff; text-align:center; margin-bottom:15px;">Founders</h3>
-      <div class="team-grid">
-        <div class="team-member">
-          <h3>zsarex</h3>
-          <p>Founder</p>
-        </div>
-        <div class="team-member">
-          <h3>ola</h3>
-          <p>Founder</p>
-        </div>
-        <div class="team-member">
-          <h3>adri_spider</h3>
-          <p>Founder</p>
-        </div>
-      </div>
-
-      <h3 style="color:#0ff; text-align:center; margin:40px 0 15px 0;">Configuración de Eventos</h3>
-      <div class="team-grid">
-        <div class="team-member">
-          <h3>vtex</h3>
-          <p>Event Configurator</p>
-        </div>
-        <div class="team-member">
-          <h3>strung</h3>
-          <p>Event Configurator</p>
-        </div>
-      </div>
-    </div>
-
   </main>
 
   <footer>
