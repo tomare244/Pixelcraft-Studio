@@ -71,32 +71,39 @@
       animation: fadeIn 1.5s ease;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 15px;
       max-width: 600px;
     }
 
     /* Cuadro pequeño */
     .small-box {
       border: 2px solid #0ff;
-      padding: 15px 20px;
+      padding: 8px 12px;
       display: inline-block;
       font-weight: 600;
-      font-size: 1.2em;
+      font-size: 1em;
       background: rgba(0,255,255,0.05);
       border-radius: 8px;
     }
 
-    /* Texto grande tipo máquina de escribir */
+    /* Texto grande */
+    .big-text {
+      font-size: 3em;
+      font-weight: 700;
+      color: #0ff;
+      margin-top: 10px;
+    }
+
+    /* Texto con animación de escritura */
     .typewriter {
       font-size: 3em;
       font-weight: 700;
       overflow: hidden;
       border-right: .15em solid #0ff;
-      white-space: nowrap; /* Una sola línea */
+      white-space: nowrap;
       letter-spacing: .05em;
       animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
-      margin-top: 10px;
-      line-height: 1.2;
+      margin-top: 5px;
     }
 
     @keyframes typing {
@@ -116,7 +123,7 @@
       margin-top: 10px;
     }
 
-    /* Botones */
+    /* Botones estilo página */
     .btn {
       background: #0ff;
       color: #000;
@@ -128,7 +135,11 @@
       margin: 5px 5px 0 0;
       transition: 0.3s;
     }
-    .btn:hover { background: #00cccc; transform: scale(1.05); }
+    .btn:hover {
+      background: #00cccc;
+      color: #fff;
+      transform: scale(1.05);
+    }
 
     /* Estadísticas */
     .stats { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px;}
@@ -146,7 +157,7 @@
       .stats { justify-content: center;}
       header { flex-direction: column; align-items: center; position: relative; }
       nav a { margin: 5px; }
-      .typewriter { font-size: 2em; }
+      .big-text, .typewriter { font-size: 2em; }
     }
   </style>
 </head>
@@ -172,7 +183,8 @@
     <div class="section">
       <div class="small-box">Estudio Profesional de Roblox</div>
       
-      <div class="typewriter">Creamos Juegos Épicos</div>
+      <div class="big-text">Creamos</div>
+      <div class="typewriter">Juegos Épicos</div>
 
       <div class="description">
         Somos un estudio profesional de Roblox que transforma tus ideas en <b>eventos y experiencias extraordinarias.</b>
