@@ -75,15 +75,17 @@
       max-width: 600px;
     }
 
-    /* Cuadro pequeño */
+    /* Cuadro más pequeño */
     .small-box {
       border: 2px solid #0ff;
-      padding: 8px 12px;
+      padding: 5px 10px; /* más pequeño */
       display: inline-block;
       font-weight: 600;
-      font-size: 1em;
+      font-size: 0.9em;
       background: rgba(0,255,255,0.05);
-      border-radius: 8px;
+      border-radius: 6px;
+      max-width: 200px; /* limitar ancho */
+      text-align: center;
     }
 
     /* Texto grande */
@@ -94,7 +96,7 @@
       margin-top: 10px;
     }
 
-    /* Texto con animación de escritura */
+    /* Texto con animación de escritura que parpadea al final */
     .typewriter {
       font-size: 3em;
       font-weight: 700;
@@ -102,7 +104,7 @@
       border-right: .15em solid #0ff;
       white-space: nowrap;
       letter-spacing: .05em;
-      animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+      animation: typing 2.5s steps(20, end) forwards, blink 0.75s step-end infinite;
       margin-top: 5px;
     }
 
@@ -112,6 +114,7 @@
     }
 
     @keyframes blink {
+      0%, 49%, 100% { border-color: #0ff; }
       50% { border-color: transparent; }
     }
 
@@ -221,7 +224,7 @@
       counters.forEach(counter => {
         const target = +counter.getAttribute('data-target');
         let count = 0;
-        const speed = 150; // más lento
+        const speed = 150;
         const updateCount = () => {
           if(count < target) {
             count++;
